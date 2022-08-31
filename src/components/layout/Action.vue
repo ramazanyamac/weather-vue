@@ -34,7 +34,7 @@
 
                 <div class="flex justify-center">
                     <div class="w-[50%]">
-                        <div class="flex gap-3 items-center">
+                        <div class="flex flex-col gap-3 items-center">
                             <div class="relative w-full">
                                 <input
                                     @input="handleSearchInput"
@@ -52,6 +52,7 @@
                                     <IconSearch v-else />
                                 </div>
                             </div>
+                            <p class="text-sm" v-show="errorMessage">{{ errorMessage }}</p>
                         </div>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
 
 <script setup>
 // import
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 import IconSpinner from '@/components/icons/IconSpinner.vue';
 import IconSearch from '@/components/icons/IconSearch.vue';
 import IconClose from '@/components/icons/IconClose.vue';
@@ -76,6 +77,7 @@ const searchInput = ref(null);
 const debounce = ref(null);
 const isSearch = ref(false);
 const myVideo = ref(null);
+const errorMessage = ref(null);
 
 // store
 const weatherStore = useWeatherStore();
@@ -111,8 +113,10 @@ const handleSearchInput = async (e) => {
                 weatherStore.addWeather(data);
                 isSearch.value = false;
                 videoReload();
+                errorMessage.value = null;
             } else {
-                console.log(data);
+                isSearch.value = false;
+                errorMessage.value = data.response.data.message;
             }
         }, 1000);
     }, 1000);
@@ -128,8 +132,12 @@ const clearSearch = async () => {
         lon: coords.value.longitude,
         lang: language.value,
     };
+
     const data = await weatherAPI(params);
-    weatherStore.addWeather(data);
-    videoReload();
+    if (data.cod === '200') {
+        weatherStore.addWeather(data);
+        videoReload();
+        errorMessage.value = null;
+    }
 };
 </script>
