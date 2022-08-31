@@ -3,7 +3,7 @@
         <picture class="absolute w-full h-full z-0">
             <video class="rounded-lg w-full h-full object-cover" ref="myVideo" autoplay loop muted>
                 <source
-                    :src="`https://github.com/ramazanyamac/weather-vue/blob/main/src/assets/videos/${weatherStore.getToday.weather[0].main}.mp4`"
+                    :src="`https://github.com/ramazanyamac/weather-vue/raw/main/src/assets/videos/${weatherStore.getToday.weather[0].main}.mp4`"
                     type="video/mp4"
                 />
             </video>
