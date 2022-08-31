@@ -2,7 +2,7 @@
     <div class="col-span-12 lg:col-span-7 relative">
         <picture class="absolute w-full h-full z-0">
             <video class="rounded-lg w-full h-full object-cover" ref="myVideo" autoplay loop muted>
-                <source :src="`../src/assets/videos/${weatherStore.getToday.weather[0].main}.mp4`" type="video/mp4" />
+                <source :src="`../videos/${weatherStore.getToday.weather[0].main}.mp4`" type="video/mp4" />
             </video>
         </picture>
         <div class="flex flex-col relative h-full z-10 p-10">
