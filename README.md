@@ -1,10 +1,16 @@
-# weather
+# Vite, Vue3, Tailwind CSS (weather app)
 
-This template should help get you started developing with Vue 3 in Vite.
+![Vite, Vue, Tailwind CSS](https://user-images.githubusercontent.com/11320080/111277027-a9384c00-8640-11eb-8323-21889bd7c609.png)
 
-## Recommended IDE Setup
+This project includes:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Vite 3](https://vitejs.dev/guide/)
+- [Vue 3](https://vuejs.org/guide/introduction.html)
+- [Pinia](https://pinia.vuejs.org/introduction.html#basic-example)
+- [Tailwind CSS 3](https://tailwindcss.com/docs/configuration)
+- [VueUse](https://vueuse.org/functions.html) - [@vueuse/usedateformat](https://vueuse.org/shared/usedateformat), [@vueuse/useGeolocation](https://vueuse.org/core/usegeolocation/#usegeolocation)
+- [Vue3 Lottie](https://github.com/megasanjay/vue3-lottie) - Lottie animations in Vue 3
+
 
 ## Customize configuration
 
@@ -26,10 +32,4 @@ npm run dev
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
